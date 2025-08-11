@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
-if [ ! -d "$HOME/.barbox/" ]; then
-    mkdir ~/.barbox/
+if [ ! -d "$HOME/.barbucket/" ]; then
+    mkdir ~/.barbucket/
 fi
-cd ~/.barbox/ || exit 2
-touch ~/.barbox/main.txt || exit 2
+cd ~/.barbucket/ || exit 2
+touch ~/.barbucket/main.txt || exit 2
 
 check_if_cancelled () {
     if [[ "$?" != "0" ]]; then
@@ -14,7 +14,7 @@ check_if_cancelled () {
 
 out=$(
     zenity \
-    --width 500 --height 100 --title "barbox 🗳️" \
+    --width 500 --height 100 --title "barbucket 🗳️" \
     --entry --text "What's on your mind?" \
     --ok-label "submit ✍️🔥" --cancel-label "trash 🗑️" 2> /dev/null 
 )
@@ -23,7 +23,7 @@ check_if_cancelled;
 location=$(
     zenity \
     --title "where to save? 🗃️" --width 150 --height 500 \
-    --file-selection --save --filename "$(cd ~/.barbox/ || exit 2; pwd)""/main.txt" 2> /dev/null
+    --file-selection --save --filename "$(cd ~/.barbucket/ || exit 2; pwd)""/main.txt" 2> /dev/null
 )
 
 check_if_cancelled;
