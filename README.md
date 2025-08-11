@@ -7,6 +7,9 @@ I commonly find myself thinking of clever and nonsenical one-liners and I wanted
 - bash
 - zenity
 
+# Setup
+> coming soon
+
 ## Todo
 - [x] First prototype
     - [x] Can be keybound
@@ -22,3 +25,5 @@ I commonly find myself thinking of clever and nonsenical one-liners and I wanted
         - [ ] Add
         - [ ] Delete
         - [ ] Copy
+- [ ] Write setup guide
+    - [ ] Test on another device / fresh install
