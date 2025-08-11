@@ -1,5 +1,6 @@
-#!/usr/bin/bash
+#!/bin/bash
 
+# Create barbucket directory and main board if they don't exist
 if [ ! -d "$HOME/.barbucket/" ]; then
     mkdir ~/.barbucket/
 fi
@@ -12,21 +13,39 @@ check_if_cancelled () {
     fi
 }
 
-out=$(
-    zenity \
-    --width 500 --height 100 --title "barbucket 🪣" \
-    --entry --text "what's on your mind?" \
-    --ok-label "submit ✍️🔥" --cancel-label "trash 🗑️" 2> /dev/null 
-)
+# Check CLI arguments
+while getopts "*f:t:" flag; do
+        case $flag in
+                f) location="$OPTARG";;
+                t) out="$OPTARG";;
+                *) echo "Invalid options, see the README."; exit 2;;
+        esac
+done
 
-check_if_cancelled;
-location=$(
-    zenity \
-    --title "where to save? 🗃️" --width 150 --height 500 \
-    --file-selection --save --filename "$(cd ~/.barbucket/ || exit 2; pwd)""/main.txt" 2> /dev/null
-)
+# Input thought, skip if specified in args
+if [[ "$out" == "" ]]; then
+    out=$(
+        zenity \
+        --width 500 --height 100 --title "barbucket 🪣" \
+        --entry --text "what's on your mind?" \
+        --ok-label "submit ✍️🔥" --cancel-label "trash 🗑️" 2> /dev/null 
+    )
 
-check_if_cancelled;
+    check_if_cancelled;
+fi
+
+# File/board selection, skip if specified in args
+if [[ "$location" == "" ]]; then
+    location=$(
+        zenity \
+        --title "where to save? 🗃️" --width 150 --height 500 \
+        --file-selection --save --filename "$(cd ~/.barbucket/ || exit 2; pwd)""/main.txt" 2> /dev/null
+    )
+
+    check_if_cancelled;
+fi
+
+# Add thought
 echo "$out" >> "$location"
 
-zenity --title "barbucket 🪣" --notification --text "saved thought to ${location}!" 2> /dev/null
+zenity --title "barbucket 🪣" --notification --text "saved thought\"${out:0:15}...\" to ${location}!" 2> /dev/null
