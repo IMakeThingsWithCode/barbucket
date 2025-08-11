@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+if [ ! -d "$HOME/.barbox/" ]; then
+    mkdir ~/.barbox/
+fi
+cd ~/.barbox/ || exit 2
+touch ~/.barbox/main.txt || exit 2
+
+check_if_cancelled () {
+    if [[ "$?" != "0" ]]; then
+        exit 2
+    fi
+}
+
+out=$(
+    zenity \
+    --width 500 --height 100 --title "barbox 🗳️" \
+    --entry --text "What's on your mind?" \
+    --ok-label "submit ✍️🔥" --cancel-label "trash 🗑️" 2> /dev/null 
+)
+
+check_if_cancelled;
+location=$(
+    zenity \
+    --title "where to save? 🗃️" --width 150 --height 500 \
+    --file-selection --save --filename "$(cd ~/.barbox/ || exit 2; pwd)""/main.txt" 2> /dev/null
+)
+
+check_if_cancelled;
+echo "$out" >> "$location"

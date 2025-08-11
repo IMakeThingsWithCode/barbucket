@@ -8,14 +8,16 @@ I commonly find myself thinking of clever and nonsenical one-liners and I wanted
 - zenity
 
 ## Todo
-- [ ] First prototype
-    - [ ] Can be keybound
-    - [ ] Prompts for thought
-    - [ ] Dumps thought to text file
-- [ ] CLI args
-    - [ ] Dump location
-    - [ ] Seperator/format
+- [x] First prototype
+    - [x] Can be keybound
+    - [x] Prompts for thought
+    - [x] Dumps thought to text file
 - [ ] GUI update
     - [ ] Pick save location, like pinterest
         - [ ] Divide into boards, one file per
-    - [ ] Pick emoji (For Discord statuses)
+- [ ] Thought viewer for boards
+    - [ ] Select board
+    - [ ] Thought actions
+        - [ ] View
+        - [ ] Delete
+        - [ ] Copy
