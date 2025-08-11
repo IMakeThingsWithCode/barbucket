@@ -14,8 +14,8 @@ check_if_cancelled () {
 
 out=$(
     zenity \
-    --width 500 --height 100 --title "barbucket 🗳️" \
-    --entry --text "What's on your mind?" \
+    --width 500 --height 100 --title "barbucket 🪣" \
+    --entry --text "what's on your mind?" \
     --ok-label "submit ✍️🔥" --cancel-label "trash 🗑️" 2> /dev/null 
 )
 
@@ -28,3 +28,5 @@ location=$(
 
 check_if_cancelled;
 echo "$out" >> "$location"
+
+zenity --title "barbucket 🪣" --notification --text "saved thought to ${location}!" 2> /dev/null

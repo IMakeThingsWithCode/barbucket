@@ -13,11 +13,12 @@ I commonly find myself thinking of clever and nonsenical one-liners and I wanted
     - [x] Prompts for thought
     - [x] Dumps thought to text file
 - [ ] GUI update
-    - [ ] Pick save location, like pinterest
-        - [ ] Divide into boards, one file per
+    - [x] Pick save location, like pinterest
+        - [x] Divide into boards, one file per
 - [ ] Thought viewer for boards
     - [ ] Select board
     - [ ] Thought actions
         - [ ] View
+        - [ ] Add
         - [ ] Delete
         - [ ] Copy
