@@ -50,6 +50,16 @@ This repo contains two seperate apps. The main one is `shortcut`, and the other 
 4. View thoughts in selected collection
 5. Copy one of the thoughts or exit
 
+# Uninstalling
+```shell
+rm -rf ~/.barbucket/
+```
+
+You can also remove dependencies with
+```shell
+sudo apt remove zenity xsel
+```
+
 ## Todo
 - [x] First prototype
     - [x] Can be keybound
