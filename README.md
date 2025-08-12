@@ -8,8 +8,43 @@ I commonly find myself thinking of clever and nonsenical one-liners and I wanted
 - zenity
 - xsel
 
-# Setup
-> coming soon
+## Setup
+Installing dependencies:
+```shell
+sudo apt update
+sudo apt install zenity xsel
+```
+
+Cloning the repo:
+```shell
+mkdir -p ~/.barbucket/.app/
+cd ~/.barbucket/.app/
+git clone https://github.com/IMakeThingsWithCode/barbucket.git
+chmod +x ./barbucket/shortcut ./barbucket/shortcut
+```
+
+If you use these commands for setup, it will install both apps to `~/.barbucket/.app/barbucket/`.
+By default, collections will be located at `~/.barbucket/`, and you can open the collections at any time with a standard file viewer or text editor.
+
+Running:
+- Application (viewer) run `~/.barbucket/.app/barbucket/barbucket`
+- Shortcut (quick add) run `~/.barbucket/.app/barbucket/shortcut`
+
+## You should bind the `shortcut` script to a key!
+Obviously the purpose of this app is mostly defeated if you have to open a terminal and run the app through it every time, so it's recommended to use your shortcut management app of choice to bind a key combo to run `~/.barbucket/.app/barbucket/shortcut`.
+
+## Usage
+This repo contains two seperate apps. The main one is `shortcut`, and the other one (`barbucket`) is just a viewer. `barbucket` can be used, but you could also just use a text editor.
+### shortcut (quick add)
+1. Run tool
+2. Write a thought
+3. Select a collection to save the thought to
+### barbucket (collection viewer)
+1. Save thoughts with other tool
+2. Run this tool
+3. Select a collection
+4. View thoughts in selected collection
+5. Copy one of the thoughts or exit
 
 ## Todo
 - [x] First prototype
@@ -24,5 +59,5 @@ I commonly find myself thinking of clever and nonsenical one-liners and I wanted
     - [x] Thought actions
         - [x] View
         - [x] Copy
-- [ ] Write setup guide
+- [x] Write setup guide
     - [ ] Test on another device / fresh install
