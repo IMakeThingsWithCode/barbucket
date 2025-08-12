@@ -50,7 +50,7 @@ This repo contains two seperate apps. The main one is `shortcut`, and the other 
 4. View thoughts in selected collection
 5. Copy one of the thoughts or exit
 
-# Uninstalling
+## Uninstalling
 ```shell
 rm -rf ~/.barbucket/
 ```
