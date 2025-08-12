@@ -6,6 +6,7 @@ I commonly find myself thinking of clever and nonsenical one-liners and I wanted
 ## Dependencies
 - bash
 - zenity
+- xsel
 
 # Setup
 > coming soon
@@ -15,15 +16,13 @@ I commonly find myself thinking of clever and nonsenical one-liners and I wanted
     - [x] Can be keybound
     - [x] Prompts for thought
     - [x] Dumps thought to text file
-- [ ] GUI update
+- [x] GUI update
     - [x] Pick save location, like pinterest
         - [x] Divide into boards, one file per
-- [ ] Thought viewer for boards
-    - [ ] Select board
-    - [ ] Thought actions
-        - [ ] View
-        - [ ] Add
-        - [ ] Delete
-        - [ ] Copy
+- [x] Thought viewer for boards
+    - [x] Select board
+    - [x] Thought actions
+        - [x] View
+        - [x] Copy
 - [ ] Write setup guide
     - [ ] Test on another device / fresh install

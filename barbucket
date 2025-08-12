@@ -1,0 +1,41 @@
+#!/bin/bash
+
+check_if_cancelled () {
+    if [[ "$?" != "0" ]]; then
+        exit 2
+    fi
+}
+
+board_to_open=$(
+    zenity --title "what to open? 🗃️" --width 150 --height 500 \
+    --file-selection --filename "$(cd ~/.barbucket/ || exit 2; pwd)""/main.txt" 2> /dev/null
+)
+check_if_cancelled
+raw=$(cat "$board_to_open")
+
+mapfile thoughts <<< "$raw"
+
+list=""
+n=0
+for thought in "${thoughts[@]}"; do
+    n=$(($n + 1))
+    if [[ "$n" == "2" ]]; then p=$'\n'; fi
+    list+="$p$n"$'\n'$(echo "$thought" | sed -E "s/\n//g")
+done
+
+
+main () {
+    out=$(
+        echo "$list" | zenity --title "$board_to_open 🗃️" --width 350 --height 600 \
+            --list --text "thoughts in \"${board_to_open}\"" --column="#" --column "thought" \
+            --ok-label "copy 📋" --cancel-label "exit 🚶" --print-column 2 2> /dev/null
+    )
+
+    if [[ "$out" != "" ]]; then
+        echo "$out" | xsel -ib
+        # uncomment for copy looping
+        # main
+    fi
+}
+
+main

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Create barbucket directory and main board if they don't exist
+# Create barbucket directory and main collection if they don't exist
 if [ ! -d "$HOME/.barbucket/" ]; then
     mkdir ~/.barbucket/
 fi
