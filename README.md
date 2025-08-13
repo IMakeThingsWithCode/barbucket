@@ -8,7 +8,7 @@ A utility for catching thoughts before they skitter away
 I commonly find myself thinking of clever and nonsenical one-liners and I wanted a way to store them, so I decided to make a program that could be opened quickly whenever I got one of these thoughts. I want to keep it simple and adaptable, and just dump all thoughts into a text file.
 
 ## Dependencies
-- bash
+- bash (make sure it supports the `mapfile` command, MacOS users!)
 - zenity
 - xsel
 
