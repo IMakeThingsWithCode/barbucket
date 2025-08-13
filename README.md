@@ -30,7 +30,7 @@ git clone https://github.com/IMakeThingsWithCode/barbucket.git
 chmod +x ./barbucket/shortcut ./barbucket/shortcut
 ```
 
-### Downloading via GitHub release (not recommended)
+### Downloading via GitHub release
 1. Go to the [GitHub releases](https://github.com/IMakeThingsWithCode/barbucket/releases/latest)
 2. Download both the scripts (`barbucket` and `shortcut`)
 3. Put both scripts in `~/.barbucket/.app/barbucket/` (create the directories manually or with the command `mkdir -p ~/.barbucket/.app/barbucket/`)
