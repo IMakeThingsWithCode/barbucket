@@ -22,7 +22,7 @@ sudo apt install zenity xsel
 
 Cloning the repo:
 
-### With `git pull`
+### With `git clone`
 ```shell
 mkdir -p ~/.barbucket/.app/
 cd ~/.barbucket/.app/
